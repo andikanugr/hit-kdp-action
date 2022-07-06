@@ -1,7 +1,7 @@
 from github import Github
 import sys
 
-# git = Github(sys.argv[1])
+git = Github(sys.argv[1])
 
 def main():
     print("============ Starting =============")

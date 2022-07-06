@@ -10,3 +10,5 @@ jobs:
         uses: andikanugr/hit-kdp-action@v1.0.1
         with:
           service: 'KDP'
+          content: ${{ secrets.TOKEN }}
+
