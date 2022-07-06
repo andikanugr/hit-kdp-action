@@ -1,22 +1,10 @@
 name: 'Kang De Ploy'
 description: 'Hit the KDP for posting thread in Slack'
 inputs:
-  token:
-    description: 'Git Token'
-    required: true
-    default: 'Kang De Ploy'
   service:
     description: 'Service name'
     required: true
     default: 'Kang De Ploy'
-  org:
-    description: 'Git Organization'
-    required: true
-    default: 'kang-de-ploy-inc'
-  repo:
-    description: 'Git Repository'
-    required: true
-    default: 'hit-kdp-action'
   host:
     description: 'KDP host'
     required: true
@@ -29,12 +17,16 @@ inputs:
 #       shell: bash
 #     - run: python ${{ github.action_path }}/hit_kdp.py ${{ inputs.token }} ${{ inputs.org }} ${{ inputs.repo }} ${{ inputs.host }} ${{ inputs.service }}
 #       shell: bash
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
+#   env:
+#     token: ${{ inputs.token }}
+#     org: ${{ inputs.org }}
+#     repo: ${{ inputs.repo }}
+#     host: ${{ inputs.host }}
+#     service: ${{ inputs.service }}
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    token: ${{ inputs.GITHUB_TOKEN }}
-    org: ${{ inputs.org }}
-    repo: ${{ inputs.repo }}
-    host: ${{ inputs.host }}
-    service: ${{ inputs.service }}
+  using: 'node16'
+  main: 'main.js'

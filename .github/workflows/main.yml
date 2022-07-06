@@ -7,10 +7,11 @@ jobs:
     steps:
       - name: Hit KDP
         id: KDP
-        uses: andikanugr/hit-kdp-action@v1.0.6
+        uses: andikanugr/hit-kdp-action@v0.0.1
         with:
           service: 'hit-kdp-action'
-          repo: 'hit-kdp-action'
-          org: 'andikanugr'
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          REPO: 'hit-kdp-action'
+          OWNER: 'andikanugr'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

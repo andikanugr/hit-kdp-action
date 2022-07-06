@@ -2,15 +2,15 @@ from github import Github
 import sys
 import os
 
-git = Github(os.environ['token'])
-org = os.environ['org']
-repo = os.environ['repo']
-kdp_host = os.environ['host']
-service = os.environ['service']
+git = Github("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")
+# org = os.environ['org']
+# repo = os.environ['repo']
+# kdp_host = os.environ['host']
+# service = os.environ['service']
 
 def get_latest_tag():
-    organization = git.get_organization(org)
-    repository = organization.get_repo(repo)
+    # organization = git.get_organization("andikanugr")
+    repository = git.get_repo("hit-kdp-action")
     return repository.get_latest_release()
 
 def main():
