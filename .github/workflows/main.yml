@@ -9,6 +9,8 @@ jobs:
         id: KDP
         uses: andikanugr/hit-kdp-action@v1.0.3
         with:
-          service: 'KDP'
+          service: 'hit-kdp-action'
+          repo: 'hit-kdp-action'
+          org: 'andikanugr'
           token: ${{ secrets.TOKEN }}
 
