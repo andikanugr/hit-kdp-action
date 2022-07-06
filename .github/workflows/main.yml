@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hit KDP
         id: KDP
-        uses: andikanugr/hit-kdp-action@v1.0.1
+        uses: andikanugr/hit-kdp-action@v1.0.2
         with:
           service: 'KDP'
           content: ${{ secrets.TOKEN }}
