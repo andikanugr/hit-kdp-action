@@ -22,10 +22,19 @@ inputs:
     required: true
     default: 'localhost'
 
+# runs:
+#   using: 'composite'
+#   steps:
+#     - run: python -m pip install PyGithub
+#       shell: bash
+#     - run: python ${{ github.action_path }}/hit_kdp.py ${{ inputs.token }} ${{ inputs.org }} ${{ inputs.repo }} ${{ inputs.host }} ${{ inputs.service }}
+#       shell: bash
 runs:
-  using: 'composite'
-  steps:
-    - run: python -m pip install PyGithub
-      shell: bash
-    - run: python ${{ github.action_path }}/hit_kdp.py ${{ inputs.token }} ${{ inputs.org }} ${{ inputs.repo }} ${{ inputs.host }} ${{ inputs.service }}
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    token: ${{ inputs.token }}
+    org: ${{ inputs.org }}
+    repo: ${{ inputs.repo }}
+    host: ${{ inputs.host }}
+    service: ${{ inputs.service }}
