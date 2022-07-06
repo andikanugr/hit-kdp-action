@@ -33,7 +33,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    token: ${{ inputs.token }}
+    token: ${{ inputs.GITHUB_TOKEN }}
     org: ${{ inputs.org }}
     repo: ${{ inputs.repo }}
     host: ${{ inputs.host }}

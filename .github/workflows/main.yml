@@ -12,5 +12,5 @@ jobs:
           service: 'hit-kdp-action'
           repo: 'hit-kdp-action'
           org: 'andikanugr'
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
