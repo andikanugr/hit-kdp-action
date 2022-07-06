@@ -21,9 +21,9 @@ inputs:
     description: 'content'
     required: true
     default: '-'
-outputs:
-  time: 
-    description: 'The time we greeted you'
+# outputs:
+#   success: 
+#     description: 'response'
 runs:
   using: 'docker'
   image: 'Dockerfile'
