@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  testing-action:
+    runs-on: ubuntu-latest
+    name: Action Test
+    steps:
+      - name: Hit KDP
+        id: KDP
+        uses: andikanugr/hit-kdp-action@v1.0.0
+        with:
+          service: 'KDP'
