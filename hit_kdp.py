@@ -2,22 +2,20 @@ from github import Github
 import sys
 import os
 
-# git = Github("")
-# org = sys.argv[2]
-# repo = sys.argv[3]
-# kdp_host = sys.argv[4]
-# service = sys.argv[5]
+git = Github(os.environ['token'])
+org = os.environ['org']
+repo = os.environ['repo']
+kdp_host = os.environ['host']
+service = os.environ['service']
 
 def get_latest_tag():
-    pass
-    # print(org)
-    # organization = git.get_organization(org)
-    # repository = organization.get_repo(repo)
-    # return repository.get_latest_release()
+    organization = git.get_organization(org)
+    repository = organization.get_repo(repo)
+    return repository.get_latest_release()
 
 def main():
     print("============ Starting =============")
-    print(os.environ)
+    print(get_latest_tag())
 
 main()
 # print(sys.argv)
