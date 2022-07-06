@@ -25,10 +25,15 @@ inputs:
 #   success: 
 #     description: 'response'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.service }}
-    - ${{ inputs.tag }}
-    - ${{ inputs.pic }}
-    - ${{ inputs.content }}
+  using: 'composite'
+  steps:
+    - run: python -m pip install PyGithub  # Installing dependencies
+      shell: bash
+    - run: python ${{ github.action_path }}/hit_kdp.py
+      shell: bash
+  # image: 'Dockerfile'
+  # args:
+  #   - ${{ inputs.service }}
+  #   - ${{ inputs.tag }}
+  #   - ${{ inputs.pic }}
+  #   - ${{ inputs.content }}
