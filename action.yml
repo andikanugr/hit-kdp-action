@@ -1,0 +1,34 @@
+name: 'Kang De Ploy'
+description: 'Hit the KDP for posting thread in Slack'
+inputs:
+  service:
+    description: 'Service name'
+    required: true
+    default: 'Kang De Ploy'
+  tag:
+    description: 'Service tag'
+    required: true
+    default: 'v.0.0'
+  pic:
+    description: 'PIC Deployment'
+    required: true
+    default: 'Kang De Ploy'
+  rfc:
+    description: 'RFC'
+    required: true
+    default: '-'
+  content:
+    description: 'content'
+    required: true
+    default: '-'
+outputs:
+  time: 
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.service }}
+    - ${{ inputs.tag }}
+    - ${{ inputs.pic }}
+    - ${{ inputs.content }}
