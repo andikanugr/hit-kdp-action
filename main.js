@@ -30,12 +30,12 @@ function extractAuthors(body) {
     return (authors || [])
 }
 
-function tellKDP(data){
-    console.log(data)
+async function tellKDP(data){
+    console.log(await data)
 }
 
 function main(){
-    const release = await getLatestRelease()
+    const release = getLatestRelease()
     tellKDP(release)
     
 }
