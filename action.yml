@@ -1,39 +1,31 @@
 name: 'Kang De Ploy'
 description: 'Hit the KDP for posting thread in Slack'
 inputs:
+  token:
+    description: 'Git Token'
+    required: true
+    default: 'Kang De Ploy'
   service:
     description: 'Service name'
     required: true
     default: 'Kang De Ploy'
-  tag:
-    description: 'Service tag'
+  org:
+    description: 'Git Organization'
     required: true
-    default: 'v.0.0'
-  pic:
-    description: 'PIC Deployment'
+    default: 'kang-de-ploy-inc'
+  repo:
+    description: 'Git Repository'
     required: true
-    default: 'Kang De Ploy'
-  rfc:
-    description: 'RFC'
+    default: 'hit-kdp-action'
+  host:
+    description: 'KDP host'
     required: true
-    default: '-'
-  content:
-    description: 'content'
-    required: true
-    default: '-'
-# outputs:
-#   success: 
-#     description: 'response'
+    default: 'localhost'
+
 runs:
   using: 'composite'
   steps:
-    - run: python -m pip install PyGithub  # Installing dependencies
+    - run: python -m pip install PyGithub
       shell: bash
-    - run: python ${{ github.action_path }}/hit_kdp.py ${{ inputs.content }}
+    - run: python ${{ github.action_path }}/hit_kdp.py ${{ inputs.token }} ${{ inputs.org }} ${{ inputs.repo }} ${{ inputs.host }} ${{ inputs.service }}
       shell: bash
-  # image: 'Dockerfile'
-  # args:
-  #   - ${{ inputs.service }}
-  #   - ${{ inputs.tag }}
-  #   - ${{ inputs.pic }}
-  #   - ${{ inputs.content }}
