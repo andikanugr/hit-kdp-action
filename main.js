@@ -16,4 +16,4 @@ async function getLatestRelease(){
     console.log(resp)
 }
 
-await getLatestRelease()
+getLatestRelease()
