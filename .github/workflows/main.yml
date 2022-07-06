@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Hit KDP
         id: KDP
-        uses: andikanugr/hit-kdp-action@v1.0.7
+        uses: andikanugr/hit-kdp-action@v1.0.9
         with:
           service: 'hit-kdp-action'
         env:

@@ -35,7 +35,7 @@ function tellKDP(data){
 }
 
 function main(){
-    const release = getLatestRelease()
+    const release = await getLatestRelease()
     tellKDP(release)
     
 }
