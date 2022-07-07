@@ -2,7 +2,7 @@ from github import Github
 import sys
 import os
 
-git = Github("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")
+git = Github("")
 # org = os.environ['org']
 # repo = os.environ['repo']
 # kdp_host = os.environ['host']
